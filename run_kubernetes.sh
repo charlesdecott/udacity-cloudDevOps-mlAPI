@@ -16,10 +16,13 @@ kubectl run mlmicroserviceapi\
 
 # Step 3:
 # List kubernetes pods
-kubectl get pods
+kubectl get pods -A
 
 # Step 4:
 # Forward the container port to a host
+
+sleep 20
+
 kubectl port-forward mlmicroserviceapi 8000:80
 
 kubectl logs -lapp=mlmicroserviceapi --all-containers=true
